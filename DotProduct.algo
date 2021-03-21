@@ -1,0 +1,69 @@
+ALGORITHM DotProdut_Algo1
+
+VAR
+ 
+     j : INTEGER;
+     ps : INTEGER = 0;
+
+BEGIN
+    
+        PROCEDURE dot_product (vector1, vector2)
+             VAR
+                 i : INTEGER;
+        BEGIN
+            FOR i FROM 0 TO  v1.length  STEP 1  DO 
+                ps += v1 [i] * v2[i]
+             END_FOR
+             
+        END
+
+    // determines  whether two vectors of given IR are orthogonal 
+
+       FOR i FROM 0 TO  vectors.length  STEP 1  DO 
+               FOR j FROM i+1  TO  vectors.length  STEP 1  DO 
+                    dot_product(vectors[i], vectors[j]) 
+                    IF (ps == 0)
+                         write(vectors[i]  +"and" + vectors[j] +  " are orthogonal ")
+                    End_If
+                END_FOR
+        END_FOR
+
+END
+
+// ____________ Modified algorithm :  (switch proc to function) _____________________
+
+ALGORITHM DotProdut_Algo2
+
+VAR
+
+     j : INTEGER;
+       
+
+BEGIN
+    
+        FUNCTION dot_product   (vector1, vector2) : INTEGER
+        VAR
+            
+            i : INTEGER;
+             ps : INTEGER = 0;
+        BEGIN
+             FOR i FROM 0 TO  v1.length  STEP 1  DO 
+                ps += v1 [i] * v2[i]
+             END_FOR
+                    return ps
+        END
+         
+                    
+
+    // determines  whether two vectors of given IR are orthogonal 
+
+   
+       FOR i FROM 0 TO  vectors.length  STEP 1  DO 
+            FOR j FROM i+1  TO  vectors.length  STEP 1  DO 
+                    IF (dot_product(vectors[i], vectors[j]) == 0)
+                         write(vectors[i]  +"and" + vectors[j] +  " are orthogonal ")
+                    End_If
+            END_FOR
+     END_FOR
+
+END
